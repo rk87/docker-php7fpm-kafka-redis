@@ -20,8 +20,7 @@ RUN wget https://github.com/edenhill/librdkafka/archive/v${LIBRDKAFKA_VERSION}.t
 #     phpize && ./configure && make && cd /tmp && \
 #     rm -rf ${PHPRDKAFKA_VERSION}.tar.gz php-rdkafka-${PHPRDKAFKA_VERSION}
 
-# RUN docker-php-ext-install mcrypt mbstring tokenizer mysqli pdo_mysql && \
-RUN docker-php-ext-install mcrypt mbstring tokenizer && \
+RUN docker-php-ext-install mcrypt mbstring tokenizer mysqli pdo_mysql && \
     pecl install -o redis && \
     pecl install channel://pecl.php.net/rdkafka-beta && \
     rm -rf /tmp/pear && \
